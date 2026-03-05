@@ -13,6 +13,7 @@ func main() {
     
     handlers.SetDB(db)
 
+
     http.HandleFunc("/api/recipes", handlers.GetAllRecipes)
     http.HandleFunc("/api/recipes/", handlers.GetRecipes) 
     http.HandleFunc("/api/recipes/search", handlers.GetSearchRescipe)
@@ -21,7 +22,7 @@ func main() {
     http.HandleFunc("/api/items/search", handlers.SearchItems)
     http.HandleFunc("/api/inventory/craft/", handlers.CraftItem)
 
-
+    http.HandleFunc("/api/inventory/set", handlers.SetInventoryItem) 
     http.HandleFunc("/api/inventory/getAll", handlers.GetAllInventory)
     http.HandleFunc("/api/inventory/updates", handlers.InventoryUpdatesSSE)
 

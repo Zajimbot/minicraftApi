@@ -11,6 +11,7 @@ import (
 )
 
 func GetAllItems(w http.ResponseWriter, r *http.Request) {
+    log.Println("GetAllItems")
     if r.Method != http.MethodGet {
         http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
         return

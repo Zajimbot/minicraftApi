@@ -17,6 +17,8 @@ func InitDB() *sql.DB {
     
     connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
         host, port, user, password, dbname)
+
+    // connStr = `psql "postgresql://172.20.0.2:5432/minicraftDB?user=myuser&password=mypassword&sslmode=disable"`
     
     // Подключаемся к базе
     db, err := sql.Open("postgres", connStr)
